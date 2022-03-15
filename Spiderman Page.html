@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Spiderman FanPage</title>
+<meta charset="utf-8">
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<!-- internal style -->
+<style type = "text/css">
+
+
+body {
+	background-image:url('spiderman wallpaper.jpg');
+	background-repeat: round;
+	background-size: auto;
+    height:100%;
+    width:100%;
+
+}
+
+
+h1 {
+	font-family:"Comic Sans MS", cursive, sans-serif;
+    color: blue;
+    text-align: center;
+}
+
+p {
+	font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+}
+
+img{
+	border:5px solid blue;
+	border-radius: 15px;
+}
+
+video{
+	display: block;
+	margin: 0 auto;		
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #49E9BD;
+	border: solid 3px Blue;
+    color: Black;
+    text-align: center;
+    border-radius: 20px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 20px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+.button {
+	display: block;
+	margin: 0 auto;	
+	background-color: red;
+	color: #49E9BD;
+	border: 5px solid #49E9BD;
+	height: 75px;
+	width: 250px;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 17px;
+
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+	background: linear-gradient(to bottom, #f11712, #0099f7 , #f11712 );
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.right {
+	float: right;
+}
+
+</style>
+</head>
+
+<!-------------NECK TAG---------------->
+
+
+<body>
+
+<span style="font-size:25px;cursor:pointer;"onclick="openNav()">&#9776;</span>
+
+
+<!-- SideNav -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../SuperheroPage.html">- Go Home</a>
+  <a href="http://cbr.com" target = "_blank">- Latest Comic News</a>
+  <a href="../Anime Page/AnimeIntro.html">- Check out my Anime Page</a>
+    
+  <br/>
+		   <i><u>RELATED CHARACTERS</u></i>
+  <br/>
+
+  <a href="../Iron Man/Iron Man Page.html" >- Iron Man</a> 	
+  <a href="../Vulture/Vulture Page.html" >- Vulture</a>   
+</div>
+
+
+
+<section>
+
+<!-- Start of Script -->
+<script>
+
+// Snackbar
+
+	function myFunction() {
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+// Stops Audio when video is played
+
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+
+//Enlarge Image
+function bigImg(x) {
+    x.style.height = "550px";
+    x.style.width = "1000px";
+}
+
+function normalImg(x) {
+    x.style.height = "300px";
+    x.style.width = "500px";
+}
+
+//Englarge Video
+function bigVid(x) {
+    x.style.height = "600px";
+    x.style.width = "1050px";
+}
+
+function normalVid(x) {
+    x.style.height = "425px";
+    x.style.width = "650px";
+}
+
+//sidebar
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+
+</script>
+<!-- End of Script -->
+
+<h1><b> Uzi's Spiderman Page ;)</b></h1>
+
+
+
+<video width="650" height = "425" controls onplay="bigVid(this)" onpause="normalVid(this)" >
+  <source src="History Of Spider-Man!.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<br/>
+
+<!-- Start Of Audio -->
+<audio hidden autoplay loop>
+  <source src="Spiderman Theme.ogg" type="audio/ogg">
+  <source src="Spiderman Theme.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<!-- End Of Audio -->
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1boat fight.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "flying.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1punished.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1tracker.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1suit.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1drop.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1eye glitch.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1bank fight.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1boom.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "1ai suit.gif" alt = "Spidey on the phone" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "spidey origin.gif" alt = "Spidey swinging" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "spidey saves old guy.gif" alt = "Trying to save Gwen" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "saving stan.gif" alt = "Stan Lee cameo" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "spider man vs winter soldier.gif" alt = "Stan Lee cameo" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "spidey and deadpool.gif" alt = "Stan Lee cameo" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "electro vs spidey.gif" alt = "Stan Lee cameo" height = "350px" width = "500px" />
+
+</figure>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class = "right">
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "free falling.gif" alt = "Stan Lee cameo" height = "350px" width = "500px" />
+
+</figure>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<figure>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" class = "textmiddle" src = "thanks SM.gif" alt = "Stan Lee cameo" height = "350px" width = "500px" />
+
+</figure>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h1> <a href="../SuperheroPage.html" style = "color: blue;" >Go to The Main Page</a> </h1>
+
+
+<br/>
+<br/>
+
+
+
+</section>
+
+<footer>
+	<button class = "button" onclick="myFunction()">Show Copyright</button>
+	<div id="snackbar" style = "color:red;">&copy; Uzair Tanveer</div>
+</footer>
+
+</body>
+</html> 
